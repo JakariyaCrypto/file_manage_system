@@ -1,0 +1,6 @@
+email: developer@gmail.com
+pwd  : developer
+
+admin
+email: admin@gmail.com
+pwd  : admin
