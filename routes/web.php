@@ -19,4 +19,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::resource('file',\App\Http\Controllers\backend\file\FileController::class);
+Route::resource('event',\App\Http\Controllers\backend\event\EventController::class);
+Route::get('/create-event-with-image',[App\Http\Controllers\backend\event\EventController::class,'createWithImg'])->name('create.image');
+Route::get('/create-with-both',[App\Http\Controllers\backend\event\EventController::class,'createWithBoth'])->name('create.both');
