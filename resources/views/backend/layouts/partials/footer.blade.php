@@ -1,3 +1,4 @@
+  
  <script src="{{asset('backend/vendors/jquery/dist/jquery.min.js')}}"></script>
     <script src="{{asset('backend/vendors/popper.js/dist/umd/popper.min.js')}}"></script>
     <script src="{{asset('backend/vendors/bootstrap/dist/js/bootstrap.min.js')}}"></script>
@@ -22,6 +23,10 @@
     <script src="{{asset('backend/vendors/jqvmap/dist/jquery.vmap.min.js')}}"></script>
     <script src="{{asset('backend/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js')}}"></script>
     <script src="{{asset('backend/vendors/jqvmap/dist/maps/jquery.vmap.world.js')}}"></script>
+    <!-- Load FilePond library -->
+    
+  <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
+  
     <script>
         (function($) {
             "use strict";
@@ -40,3 +45,10 @@
             });
         })(jQuery);
     </script>
+
+<script type="text/javascript">
+       setTimeout(() => {
+          $('#alert').slideUp();
+      }, 2500);
+    </script>
+    

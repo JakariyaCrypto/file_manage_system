@@ -5,7 +5,7 @@
     <!-- Left Panel -->
 
     
-    @include('backend/layouts/partials/sidebar')
+ 
     <!-- Left Panel -->
 
     <!-- Right Panel -->
@@ -31,48 +31,81 @@
 <!-- Button trigger modal -->
 
 
-<!-- Modal -->
-<div class="modal fade" id="add-new" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header bg-warning">
-        <h5 class="modal-title" id="exampleModalLabel"><i class="fa fa-file"></i> Create New File</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="form">
-            <form action="" method="post" enctype="multipart/form-data">
-                <div class="form-group">
-                    <label for="formGroupExampleInput">Title <span class="text text-primary text-lg">*</span></label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter file title">
-                  </div>
-                 <div class="form-group">
-                <label for="formGroupExampleInput">Choose File <span class="text text-primary text-lg">*</span></label>
-                  <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="inputGroupFile01">
-                    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-                  </div>
-                </div>
-            </form>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="submit" class="btn btn-primary btn-sm">
-            <i class="fa fa-dot-circle-o"></i> Submit
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
+
 
 
     @include('backend/layouts/partials/footer')
-    
-   
 
+    @yield('script')
+    
 <style type="text/css">
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+body{
+    font-family: 'Poppins', sans-serif !important;
+}
+
+
+.file-icon-blue i.fa.fa-folder {
+    color: blue;
+    font-size: 100px;
+}
+        
+
+.file-item {
+    margin: 20px;
+}
+
+.file-title h6 {
+    font-size: 15px;
+    padding-top: 8px;
+    color: #939393;
+}
+
+
+.file-icon-green i.fa.fa-folder {
+    font-size: 100px;
+    color: green;
+        border-radius: .5rem;
+    }
+
+    .col-sm-2 {
+        max-width: 13.667% !important;
+    }
+
+.custom-card {
+    border-top: 3px solid orange;
+    border-radius: .8rem;
+}
+    .custom-modal {
+        border: ;
+        border-top: 5px solid orange;
+        border-radius: .5rem;
+        background: #ffffff;
+
+    }
+
+.custom-modal-title {
+    font-size: 21px;
+    font-weight: 300;
+    color: #666464;
+}
+
+#formGroupExampleInput {
+    font-size: 16px;
+    text-transform: capitalize;
+    height: 45px;
+}
+
+#inputGroupFile01 {
+    font-size: 16px;
+    text-transform: capitalize;
+    height: 45px;
+}
+
+label {
+    color: #606060 !important;
+}
 
 </style>
 </body>

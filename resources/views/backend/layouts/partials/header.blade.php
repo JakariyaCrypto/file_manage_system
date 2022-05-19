@@ -27,6 +27,9 @@
     <link rel="stylesheet" href="{{asset('backend/vendors/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css')}}">
     <!-- data table -->
 
+     <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
+
+
     <link rel="stylesheet" href="{{asset('backend/assets/css/style.css')}}">
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>

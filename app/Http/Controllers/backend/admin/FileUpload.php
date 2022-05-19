@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\backend\file;
+namespace App\Http\Controllers\backend\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\backend\file\File;
 
-class FileController extends Controller
+class FileUpload extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +14,7 @@ class FileController extends Controller
      */
     public function index()
     {
-        $files = File::orderBy('id','DESC')->get();
-        return view('backend/file/all-file',compact('files'));
+        return view('backend/multifile/multi_file');
     }
 
     /**
@@ -26,8 +24,7 @@ class FileController extends Controller
      */
     public function create()
     {
-        return view('backend/file/create-file');
-
+        //
     }
 
     /**
@@ -38,36 +35,7 @@ class FileController extends Controller
      */
     public function store(Request $request)
     {
-        // return $request->file('file');
-        $request->validate([
-            'title' => 'required|string',
-            'file' => 'required'
-        ]);
-
-        $model = new File();
-
-        // generate file name
-        $file = $request->file('file');
-        $fileExt = $file->getClientOriginalExtension();
-        $rand = rand(111111111,999999999);
-        $fileName = 'file'.time().$rand.'.'.$fileExt;
-
-        // print_r($fileName);exit;
-        // generate file name
-        $file->move('upload/file',$fileName);
-        $storeFile = '/upload/file'.$fileName;
-
-
-        $model->title = $request->post('title');
-        $model->file = $storeFile;
-        $model->save();
-
-        if ($model->save()) {
-            return redirect()->route('file.index')->with('success','File Created Successfully !');
-        }else{
-            return redirect()->route('file.index')->with('danger','File Created Successfully !');
-
-        }
+        //
     }
 
     /**

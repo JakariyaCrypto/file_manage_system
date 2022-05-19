@@ -32,10 +32,16 @@
                             </div> 
                             <div class="card-body">
                                <div class="form">
-                                <form action="" method="post" enctype="multipart/form-data">
+                                <form action="{{route('file.store')}}" method="post" enctype="multipart/form-data">
+                                    @csrf
                                     <div class="form-group">
-                                        <label for="formGroupExampleInput">Event Name <span class="text text-primary text-lg">*</span></label>
+                                        <label for="formGroupExampleInput">File Title <span class="text text-primary text-lg">*</span></label>
                                         <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Event Name" name="title">
+                                         @error('title')
+                                            <div class="alert alert-danger">
+                                                <span>{{$message}}</span>
+                                            </div>
+                                        @enderror
                                       </div>
                                      <div class="form-group">
                                         <label for="formGroupExampleInput">Choose File <span class="text text-primary text-lg">*</span></label>
@@ -43,6 +49,11 @@
                                             <input type="file" class="custom-file-input" id="inputGroupFile01" name="file">
                                             <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                                           </div>
+                                           @error('file')
+                                            <div class="alert alert-danger">
+                                                <span>{{$message}}</span>
+                                            </div>
+                                        @enderror
                                         </div>
                                     <button type="submit" class="btn btn-primary btn-md rounded">
                                         <i class="fa fa-dot-circle-o"></i> Submit
