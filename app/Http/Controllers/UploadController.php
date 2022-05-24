@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\backend\event;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class EventController extends Controller
+class UploadController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +13,7 @@ class EventController extends Controller
      */
     public function index()
     {
-        return view('backend/event/all-event');
+        //
     }
 
     /**
@@ -24,22 +23,8 @@ class EventController extends Controller
      */
     public function create()
     {
-        return view('backend/event/create-event');
-        
+        //
     }
-
-    public function createWithImg()
-    {
-        return view('backend/event/create-with-image');
-
-    }
-
-    public function createWithBoth()
-    {
-        return view('backend/event/create-with-both');
-
-    }
-
 
     /**
      * Store a newly created resource in storage.
@@ -47,9 +32,9 @@ class EventController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function update(Request $request)
     {
-        //
+         $input = $request->all();
     }
 
     /**

@@ -15,6 +15,7 @@ class CreateFilepondsTable extends Migration
     {
         Schema::create('fileponds', function (Blueprint $table) {
             $table->id();
+            $table->string('folder_id');
             $table->string('filename');
             $table->string('filepath');
             $table->string('extension', 100);

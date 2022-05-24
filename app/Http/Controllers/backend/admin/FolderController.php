@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\backend\file;
+namespace App\Http\Controllers\backend\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\backend\file\File;
+use Illuminate\Validation\Rule;
+use RahulHaque\Filepond\Facades\Filepond;
 
-class FileController extends Controller
+class FolderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +16,7 @@ class FileController extends Controller
      */
     public function index()
     {
-        $files = File::orderBy('id','DESC')->get();
-        return view('backend/file/all-file',compact('files'));
+        return view('backend/folder/create-folder');
     }
 
     /**
@@ -26,8 +26,27 @@ class FileController extends Controller
      */
     public function create()
     {
-        return view('backend/file/create-file');
+        //
+        // $input = $request->all();
+        // $files=array();
+        // if($filesUp=$request->file('files')){
+        //     foreach($filesUp as $file){
+        //         $name = $file->getClientOriginalName();
+        //         $folder = uniqid() . '-' . now()->timestamp;
+        //         $file->storeAs('/files/tmp/' . $folder, $name);
+        //         $files[]=$name;
 
+        //         TemporaryFile::create([
+        //             'folder' => $folder,
+        //             'filename' => $name
+        //         ]);
+
+        //     }
+
+        //     return $folder;
+        // }
+
+        // return '';
     }
 
     /**
@@ -38,36 +57,7 @@ class FileController extends Controller
      */
     public function store(Request $request)
     {
-        // return $request->file('file');
-        $request->validate([
-            'title' => 'required|string',
-            'file' => 'required'
-        ]);
-
-        $model = new File();
-
-        // generate file name
-        $file = $request->file('file');
-        $fileExt = $file->getClientOriginalExtension();
-        $rand = rand(111111111,999999999);
-        $fileName = 'file'.time().$rand.'.'.$fileExt;
-
-        // print_r($fileName);exit;
-        // generate file name
-        $file->move('upload/file',$fileName);
-        $storeFile = '/upload/file'.$fileName;
-
-
-        $model->title = $request->post('title');
-        $model->file = $storeFile;
-        $model->save();
-
-        if ($model->save()) {
-            return redirect()->route('file.index')->with('success','File Created Successfully !');
-        }else{
-            return redirect()->route('file.index')->with('danger','File Created Successfully !');
-
-        }
+      
     }
 
     /**
@@ -99,10 +89,10 @@ class FileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
-    }
+
+                    }
 
     /**
      * Remove the specified resource from storage.
@@ -114,4 +104,19 @@ class FileController extends Controller
     {
         //
     }
+
+
+    public function upload(Request $request){
+        // $file = $request->file('files');
+        if ($ruquest->hasFile('files')) {
+            $file = $request->file('files');
+            $fileName = $file->getClientOriginalName();
+            dd($fileName);
+        }
+        // dd($file);
+
+    }
+
+
+
 }

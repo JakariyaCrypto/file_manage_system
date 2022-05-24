@@ -4,3 +4,11 @@ pwd  : developer
 admin
 email: admin@gmail.com
 pwd  : admin
+
+Please Help
+File upload ar jonno Sopamo laravel filepond use koreci,onno input field ar data request paya jai,kintu filepond ar file request a paya jai nai,ami onnek google,youtube search koreci kintu temon resoruce pai ni,senior ra jodi dekten kutai problem ace,tahole onnek help hoto
+thanks for valuable time.
+
+
+File upload ar jonno Sopamo laravel filepond use koreci,onno input field ar data request paya jai,kintu filepond ar file request null dekai,ami onnek google,youtube search koreci kintu temon resoruce pai ni,akn bujteci na kutai problem ace.
+jodi apni filepond file upload use kore taken tahole aktu check koren kutao vul ace ni.

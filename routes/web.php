@@ -21,12 +21,7 @@ Auth::routes();
 
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::resource('file',\App\Http\Controllers\backend\file\FileController::class);
-Route::resource('event',\App\Http\Controllers\backend\event\EventController::class);
 
+Route::get('create-foler',[App\Http\Controllers\backend\admin\FolderController::class,'index'])->name('folder.index');
 
-Route::get('/create-event-with-image',[App\Http\Controllers\backend\event\EventController::class,'createWithImg'])->name('create.image');
-Route::get('/create-with-both',[App\Http\Controllers\backend\event\EventController::class,'createWithBoth'])->name('create.both');
-
-
-
+Route::post('filepond/api', [App\Http\Controllers\backend\admin\FolderController::class,'upload'])->name('filepond.upload');

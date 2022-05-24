@@ -25,7 +25,7 @@
     <script src="{{asset('backend/vendors/jqvmap/dist/maps/jquery.vmap.world.js')}}"></script>
     <!-- Load FilePond library -->
     
-  <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
+  <script src="{{asset('backend/assets/js/filepond.js')}}"></script>
   
     <script>
         (function($) {
@@ -46,9 +46,4 @@
         })(jQuery);
     </script>
 
-<script type="text/javascript">
-       setTimeout(() => {
-          $('#alert').slideUp();
-      }, 2500);
-    </script>
     

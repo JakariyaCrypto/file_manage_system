@@ -31,9 +31,10 @@
 
                 </div>
                  <div class="col-sm-11">
+                    <a href="{{route('home')}}">Home</a>
                 <div class="page-header float-right">
                     <div class="page-title">
-                       <a href="create-file.html" class="btn btn-outline-primary rounded" data-toggle="modal" data-target="#exampleModal"> <i class="fa fa-plus"></i> Create Folder</a>
+                       <a href="{{route('folder.index')}}" class="btn btn-outline-primary rounded"> <i class="fa fa-plus"></i> Create Folder</a>
                     </div>
                 </div>
             </div>
